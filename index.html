@@ -15,15 +15,12 @@
         <a class="navbar-brand" href="#">
             <i class="far fa-address-book mx-1"></i>
             Agenda Telefônica</a>
-        <button type="button" class="btn btn-outline-dark btn-lg rounded-pill">
-            Novo Contato
-            <i class="fas fa-plus"></i>
-        </button>
     </nav>
+
     <div class="alone text-muted text-center small">
-        <img src="images/alone.jpg" width="150" height="150" class="p-3 m-3"><br>
+        <img src="images/alone.png" width="150" height="150" class="p-3 m-3"><br>
         Parece que você nao tem nenhum contato.<br>
-        Porque não tenta <a href="#">criar um novo</a>?
+        Porque não tenta <a href="#" data-toggle="modal" data-target="#modalNovo">criar um novo</a>?
     </div>
 
     <!-- <div class="p-5">
@@ -53,6 +50,51 @@
             </tbody>
         </table>
     </div> -->
+
+    <!-- Modal novo -->
+    <div class="modal fade" id="modalNovo" tabindex="-1" role="dialog">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title text-muted">Novo Contato</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span>&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <form>
+                        <div class="my-3">
+                            <i class="far fa-user-circle mr-2"></i>Nome
+                            <input type="text" class="form-control my-1" placeholder="Fulano">
+                        </div>
+                        <div class="my-3">
+                            <i class="far fa-envelope mr-2"></i>Email
+                            <input type="email" class="form-control my-1" placeholder="fulano@exemplo.com">
+                        </div>
+                        <div class="my-3">
+                            <i class="fas fa-mobile-alt mr-2"></i>Telefone
+                            <input type="text" class="form-control my-1" placeholder="(47) 1425-9435">
+                        </div  class="my-3">
+                        <div  class="my-3">
+                            <i class="far fa-calendar mr-2"></i>Data de Nascimento
+                            <input type="date" class="form-control my-1">
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-outline-dark" data-dismiss="modal">Cancelar</button>
+                    <button type="button" class="btn btn-dark">Criar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Botão novo-->
+    <button type="button" class="btn btn-outline-dark btn-lg rounded-pill float-right novo" data-toggle="modal"
+        data-target="#modalNovo">
+        Novo Contato
+        <i class="fas fa-plus"></i>
+    </button>
 
     <script src="node_modules/jquery/dist/jquery.min.js"></script>
     <script src="node_modules/popper.js/dist/popper.min.js"></script>
