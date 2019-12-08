@@ -19,15 +19,22 @@
             Agenda Telefônica</a>
     </nav>
 
-    <!-- Nenhum contato
-    <div class="alone text-muted text-center small">
+    <!-- Carregando -->
+    <div class="text-center centro" id="carregando">
+        <div class="spinner-border" role="status">
+            <span class="sr-only">Loading...</span>
+        </div>
+    </div>
+
+    <!-- Nenhum contato -->
+    <div class="centro text-muted text-center small" id="alone">
         <img src="images/alone.png" width="150" height="150" class="p-3 m-3"><br>
         Parece que você nao tem nenhum contato.<br>
         Porque não tenta <a href="#" data-toggle="modal" data-target="#modalNovo">criar um novo</a>?
-    </div> -->
+    </div>
 
     <!-- Tabela contatos -->
-    <div class="p-3">
+    <div class="p-3" id="contatos">
         <table class="table table-borderless table-hover table-responsive-sm">
             <thead>
                 <tr>
@@ -70,30 +77,30 @@
                         <div class="my-3">
                             <i class="far fa-user-circle mr-2"></i>Nome
                             <div class="input-group my-1">
-                                <input type="text" class="form-control" placeholder="Fulano">
-                                <input type="text" class="form-control" placeholder="da Silva">
-                              </div>
+                                <input type="text" class="form-control" placeholder="Fulano" id="nome">
+                                <input type="text" class="form-control" placeholder="da Silva" id="sobrenome">
+                            </div>
                         </div>
                         <div class="my-3">
                             <i class="far fa-envelope mr-2"></i>Email
-                            <input type="email" class="form-control my-1" placeholder="fulano@exemplo.com">
+                            <input type="email" class="form-control my-1" placeholder="fulano@exemplo.com" id="email">
                         </div>
                         <div class="my-3">
                             <i class="fas fa-mobile-alt mr-2"></i>Telefone
-                            <input type="text" class="form-control my-1" placeholder="(47) 1425-9435">
+                            <input type="text" class="form-control my-1" placeholder="(47) 1425-9435" id="telefone">
                         </div class="my-3">
                         <div class="my-3">
                             <i class="far fa-calendar mr-2"></i>Data de Nascimento
-                            <input type="date" class="form-control my-1">
+                            <input type="date" class="form-control my-1" id="nascimento">
                         </div>
                         <div class="my-3">
                             <i class="far fa-building mr-2"></i>Endereço
-                            <textarea class="form-control my-1" placeholder="Avenida Brasil, n° 314"></textarea>
+                            <textarea class="form-control my-1" placeholder="Avenida Brasil, n° 314" id="endereco"></textarea>
                         </div>
                     </form>
                     <div class="btn-group float-right mt-2 mb-3">
                         <input type="button" class="btn btn-outline-dark" data-dismiss="modal" value="Cancelar">
-                        <input type="submit" class="btn btn-dark" value="Criar">
+                        <input type="submit" class="btn btn-dark" data-dismiss="modal" value="Criar" id="novo">
                     </div>
                 </div>
             </div>
@@ -110,6 +117,7 @@
     <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+    <script src="js/crud.js"></script>
 </body>
 
 </html>
