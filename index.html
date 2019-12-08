@@ -2,122 +2,99 @@
 <html lang="pt-br">
 
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
-    <script src="https://kit.fontawesome.com/5fdf21a5c7.js"></script>
-    <link rel="stylesheet" href="css/main.css">
-    <link rel="icon" href="favicon.ico">
-    <title>Agenda Telefônica</title>
+<meta charset="utf-8">
+<meta name="viewport"
+	content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<link rel="stylesheet"
+	href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+<script src="https://kit.fontawesome.com/5fdf21a5c7.js"></script>
+<link rel="stylesheet" href="css/styles.css">
+<link rel="icon" href="favicon.ico">
+<title>Agenda Telefônica</title>
 </head>
 
 <body>
-    <!-- Navbar -->
-    <nav class="navbar navbar-light bg-light">
-        <a class="navbar-brand" href="#">
-            <i class="far fa-address-book mx-1"></i>
-            Agenda Telefônica</a>
-    </nav>
+	<!-- Navbar -->
+	<nav class="navbar navbar-light bg-light">
+		<a class="navbar-brand" href="#"> <i
+			class="far fa-address-book mx-1"></i> Agenda Telefônica
+		</a>
+	</nav>
 
-    <!-- Carregando -->
-    <div class="text-center centro" id="carregando">
-        <div class="spinner-border" role="status">
-            <span class="sr-only">Loading...</span>
-        </div>
-    </div>
+	<!-- Carregando -->
+	<div class="text-center" id="carregando">
+		<div class="spinner-border" role="status">
+			<span class="sr-only">Carregando...</span>
+		</div>
+	</div>
 
-    <!-- Nenhum contato -->
-    <div class="centro text-muted text-center small" id="alone">
-        <img src="images/alone.png" width="150" height="150" class="p-3 m-3"><br>
-        Parece que você nao tem nenhum contato.<br>
-        Porque não tenta <a href="#" data-toggle="modal" data-target="#modalNovo">criar um novo</a>?
-    </div>
+	<div id="contatos"></div>
 
-    <!-- Tabela contatos -->
-    <div class="p-3" id="contatos">
-        <table class="table table-borderless table-hover table-responsive-sm">
-            <thead>
-                <tr>
-                    <th scope="col">Nome</th>
-                    <th scope="col">Email</th>
-                    <th scope="col">Telefone</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td>Mark</td>
-                    <td class="text-muted">Otto</td>
-                    <td>@mdo</td>
-                </tr>
-                <tr>
-                    <td>Jacob</td>
-                    <td class="text-muted">Thornton</td>
-                    <td>@fat</td>
-                </tr>
-                <tr>
-                    <td colspan="2">Larry the Bird</td>
-                    <td>@twitter</td>
-                </tr>
-            </tbody>
-        </table>
-    </div>
+	<!-- Modal novo -->
+	<div class="modal fade" id="modal-novo" tabindex="-1" role="dialog">
+		<div class="modal-dialog">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h5 class="modal-title text-muted">Novo Contato</h5>
+					<button type="button" class="close" data-dismiss="modal"
+						aria-label="Close">
+						<span>&times;</span>
+					</button>
+				</div>
+				<div class="modal-body">
+					<form class="mx-2" action="#" id="form-novo">
+						<div class="my-3">
+							<i class="far fa-user-circle mr-2"></i>Nome
+							<div class="input-group my-1">
+								<input type="text" class="form-control" placeholder="Fulano"
+									required id="nome"> <input type="text"
+									class="form-control" placeholder="da Silva" id="sobrenome">
+							</div>
+						</div>
+						<div class="my-3">
+							<i class="far fa-envelope mr-2"></i>Email <input type="email"
+								class="form-control my-1" placeholder="fulano@exemplo.com"
+								id="email">
+						</div>
+						<div class="my-3">
+							<i class="fas fa-mobile-alt mr-2"></i>Telefone <input type="text"
+								class="form-control my-1" placeholder="(47) 1425-9435"
+								id="telefone">
+						</div>
+						<div class="my-3">
+							<i class="far fa-calendar mr-2"></i>Data de Nascimento <input
+								type="date" class="form-control my-1" id="nascimento">
+						</div>
+						<div class="my-3">
+							<i class="far fa-building mr-2"></i>Endereço
+							<textarea class="form-control my-1"
+								placeholder="Avenida Brasil, n° 314" id="endereco"></textarea>
+						</div>
+						<div class="btn-group float-right mt-2 mb-3">
+							<input type="button" class="btn btn-outline-dark"
+								data-dismiss="modal" value="Cancelar"> <input
+								type="submit" class="btn btn-dark" value="Criar">
+						</div>
+					</form>
+				</div>
+			</div>
+		</div>
+	</div>
 
-    <!-- Modal novo -->
-    <div class="modal fade" id="modalNovo" tabindex="-1" role="dialog">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title text-muted">Novo Contato</h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span>&times;</span>
-                    </button>
-                </div>
-                <div class="modal-body">
-                    <form class="mx-2">
-                        <div class="my-3">
-                            <i class="far fa-user-circle mr-2"></i>Nome
-                            <div class="input-group my-1">
-                                <input type="text" class="form-control" placeholder="Fulano" id="nome">
-                                <input type="text" class="form-control" placeholder="da Silva" id="sobrenome">
-                            </div>
-                        </div>
-                        <div class="my-3">
-                            <i class="far fa-envelope mr-2"></i>Email
-                            <input type="email" class="form-control my-1" placeholder="fulano@exemplo.com" id="email">
-                        </div>
-                        <div class="my-3">
-                            <i class="fas fa-mobile-alt mr-2"></i>Telefone
-                            <input type="text" class="form-control my-1" placeholder="(47) 1425-9435" id="telefone">
-                        </div class="my-3">
-                        <div class="my-3">
-                            <i class="far fa-calendar mr-2"></i>Data de Nascimento
-                            <input type="date" class="form-control my-1" id="nascimento">
-                        </div>
-                        <div class="my-3">
-                            <i class="far fa-building mr-2"></i>Endereço
-                            <textarea class="form-control my-1" placeholder="Avenida Brasil, n° 314" id="endereco"></textarea>
-                        </div>
-                    </form>
-                    <div class="btn-group float-right mt-2 mb-3">
-                        <input type="button" class="btn btn-outline-dark" data-dismiss="modal" value="Cancelar">
-                        <input type="submit" class="btn btn-dark" data-dismiss="modal" value="Criar" id="novo">
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
+	<!-- Botão novo-->
+	<button type="button"
+		class="btn btn-outline-dark btn-lg rounded-pill float-right novo"
+		data-toggle="modal" data-target="#modal-novo">
+		Novo Contato <i class="fas fa-plus"></i>
+	</button>
 
-    <!-- Botão novo-->
-    <button type="button" class="btn btn-outline-dark btn-lg rounded-pill float-right novo" data-toggle="modal"
-        data-target="#modalNovo">
-        Novo Contato
-        <i class="fas fa-plus"></i>
-    </button>
-
-    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
-    <script src="js/crud.js"></script>
+	<script
+		src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+	<script
+		src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
+	<script
+		src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+	<script src="js/main.js"></script>
 </body>
 
 </html>
