@@ -2,22 +2,19 @@
 <html lang="pt-br">
 
 <head>
-<meta charset="utf-8">
-<meta name="viewport"
-	content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<link rel="stylesheet"
-	href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
-<script src="https://kit.fontawesome.com/5fdf21a5c7.js"></script>
-<link rel="stylesheet" href="css/styles.css">
-<link rel="icon" href="favicon.ico">
-<title>Agenda Telefônica</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+	<script src="https://kit.fontawesome.com/5fdf21a5c7.js"></script>
+	<link rel="stylesheet" href="css/styles.css">
+	<link rel="icon" href="favicon.ico">
+	<title>Agenda Telefônica</title>
 </head>
 
 <body>
 	<!-- Navbar -->
 	<nav class="navbar navbar-light bg-light">
-		<a class="navbar-brand" href="#"> <i
-			class="far fa-address-book mx-1"></i> Agenda Telefônica
+		<a class="navbar-brand" href="#"> <i class="far fa-address-book mx-1"></i> Agenda Telefônica
 		</a>
 	</nav>
 
@@ -36,8 +33,7 @@
 			<div class="modal-content">
 				<div class="modal-header">
 					<h5 class="modal-title text-muted">Novo contato</h5>
-					<button type="button" class="close" data-dismiss="modal"
-						aria-label="Close">
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close">
 						<span>&times;</span>
 					</button>
 				</div>
@@ -46,33 +42,29 @@
 						<div class="my-3">
 							<i class="far fa-user-circle mr-2"></i>Nome
 							<div class="input-group my-1">
-								<input type="text" class="form-control" placeholder="Fulano"
-									required id="novo-nome"> <input type="text"
-									class="form-control" placeholder="da Silva" id="novo-sobrenome">
+								<input type="text" class="form-control" placeholder="Fulano" required id="novo-nome">
+								<input type="text" class="form-control" placeholder="da Silva" id="novo-sobrenome">
 							</div>
 						</div>
 						<div class="my-3">
-							<i class="far fa-envelope mr-2"></i>Email <input type="email"
-								class="form-control my-1" placeholder="fulano@exemplo.com"
-								id="novo-email">
+							<i class="far fa-envelope mr-2"></i>Email <input type="email" class="form-control my-1"
+								placeholder="fulano@exemplo.com" id="novo-email">
 						</div>
 						<div class="my-3">
-							<i class="fas fa-mobile-alt mr-2"></i>Telefone <input type="text"
-								class="form-control my-1" placeholder="(47) 1425-9435"
-								id="novo-telefone">
+							<i class="fas fa-mobile-alt mr-2"></i>Telefone <input type="text" class="form-control my-1"
+								placeholder="(47) 1425-9435" id="novo-telefone">
 						</div>
 						<div class="my-3">
-							<i class="far fa-calendar mr-2"></i>Data de Nascimento <input
-								type="date" class="form-control my-1" id="novo-nascimento">
+							<i class="far fa-calendar mr-2"></i>Data de Nascimento <input type="date"
+								class="form-control my-1" id="novo-nascimento">
 						</div>
 						<div class="my-3">
 							<i class="far fa-building mr-2"></i>Endereço
-							<textarea class="form-control my-1"
-								placeholder="Avenida Brasil, n° 314" id="novo-endereco"></textarea>
+							<textarea class="form-control my-1" placeholder="Avenida Brasil, n° 314"
+								id="novo-endereco"></textarea>
 						</div>
 						<div class="btn-group float-right mt-2 mb-3">
-							<input type="button" class="btn btn-outline-dark"
-								data-dismiss="modal" value="Cancelar">
+							<input type="button" class="btn btn-outline-dark" data-dismiss="modal" value="Cancelar">
 							<button type="submit" class="btn btn-dark">
 								Criar<i class="fas fa-plus ml-2"></i>
 							</button>
@@ -89,8 +81,7 @@
 			<div class="modal-content">
 				<div class="modal-header">
 					<h5 class="modal-title text-muted">Editar contato</h5>
-					<button type="button" class="close" data-dismiss="modal"
-						aria-label="Close">
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close">
 						<span>&times;</span>
 					</button>
 				</div>
@@ -99,37 +90,32 @@
 						<div class="my-3">
 							<i class="far fa-user-circle mr-2"></i>Nome
 							<div class="input-group my-1">
-								<input type="text" class="form-control" placeholder="Fulano"
-									required id="editar-nome"> <input type="text"
-									class="form-control" placeholder="da Silva"
-									id="editar-sobrenome">
+								<input type="text" class="form-control" placeholder="Fulano" required id="editar-nome">
+								<input type="text" class="form-control" placeholder="da Silva" id="editar-sobrenome">
 							</div>
 						</div>
 						<div class="my-3">
-							<i class="far fa-envelope mr-2"></i>Email <input type="email"
-								class="form-control my-1" placeholder="fulano@exemplo.com"
-								id="editar-email">
+							<i class="far fa-envelope mr-2"></i>Email <input type="email" class="form-control my-1"
+								placeholder="fulano@exemplo.com" id="editar-email">
 						</div>
 						<div class="my-3">
-							<i class="fas fa-mobile-alt mr-2"></i>Telefone <input type="text"
-								class="form-control my-1" placeholder="(47) 1425-9435"
-								id="editar-telefone">
+							<i class="fas fa-mobile-alt mr-2"></i>Telefone <input type="text" class="form-control my-1"
+								placeholder="(47) 1425-9435" id="editar-telefone">
 						</div>
 						<div class="my-3">
-							<i class="far fa-calendar mr-2"></i>Data de Nascimento <input
-								type="date" class="form-control my-1" id="editar-nascimento">
+							<i class="far fa-calendar mr-2"></i>Data de Nascimento <input type="date"
+								class="form-control my-1" id="editar-nascimento">
 						</div>
 						<div class="my-3">
 							<i class="far fa-building mr-2"></i>Endereço
-							<textarea class="form-control my-1"
-								placeholder="Avenida Brasil, n° 314" id="editar-endereco"></textarea>
+							<textarea class="form-control my-1" placeholder="Avenida Brasil, n° 314"
+								id="editar-endereco"></textarea>
 						</div>
 						<button type="button" class="btn btn-outline-danger" id="apagar">
 							<i class="far fa-trash-alt"></i>
 						</button>
 						<div class="btn-group float-right mt-2 mb-3">
-							<input type="button" class="btn btn-outline-dark"
-								data-dismiss="modal" value="Cancelar">
+							<input type="button" class="btn btn-outline-dark" data-dismiss="modal" value="Cancelar">
 							<button type="submit" class="btn btn-dark">
 								Salvar<i class="far fa-save ml-2"></i>
 							</button>
@@ -141,18 +127,14 @@
 	</div>
 
 	<!-- Botão novo-->
-	<button type="button"
-		class="btn btn-outline-dark btn-lg rounded-pill float-right novo"
-		data-toggle="modal" data-target="#modal-novo">
+	<button type="button" class="btn btn-outline-dark btn-lg rounded-pill float-right novo" data-toggle="modal"
+		data-target="#modal-novo">
 		Novo contato <i class="fas fa-plus"></i>
 	</button>
 
-	<script
-		src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-	<script
-		src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
-	<script
-		src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
 	<script src="js/main.js"></script>
 </body>
 
