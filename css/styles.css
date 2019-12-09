@@ -11,6 +11,6 @@
     right: 3%;
   }
 
-a, a:hover {
+.mailto, .mailto:hover {
   color: gray;
 }
