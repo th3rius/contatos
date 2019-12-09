@@ -15,26 +15,26 @@ function adicionarContato() {
 	Contato.nascimento = $('input#novo-nascimento').val();
 	Contato.endereco = $('textarea#novo-endereco').val();
 	var contatoJson = JSON.stringify(Contato);
-	$.post('agenda.php', {
+	$.post('https://ifscagenda.000webhostapp.com/', {
 		acao : 'adicionar_contato',
 		contato : contatoJson
 	}, function() {
+		$("input#novo-nome").val("");
+		$("input#novo-sobrenome").val("");
+		$("input#novo-email").val("");
+		$("input#novo-telefone").val("");
+		$("input#novo-nascimento").val("");
+		$("textarea#novo-endereco").val("");
+		listarContatos();
 		$("#modal-novo").modal('hide');
 	}, "json");
-	$("input#novo-nome").val("");
-	$("input#novo-sobrenome").val("");
-	$("input#novo-email").val("");
-	$("input#novo-telefone").val("");
-	$("input#novo-nascimento").val("");
-	$("input#novo-endereco").val("");
-	listarContatos();
 }
 
 function editarContato(elemento) {
 	var Contato = new Object();
 	Contato.cod_contato = $(elemento).attr('cod_contato');
 	var contatoJson = JSON.stringify(Contato);
-	$.post('agenda.php', {
+	$.post('https://ifscagenda.000webhostapp.com/', {
 		acao : 'buscar_contato',
 		contato : contatoJson
 	}, function(dadoJson) {
@@ -57,30 +57,30 @@ function editarContato(elemento) {
 		Contato.endereco = $('textarea#editar-endereco').val();
 		console.log(Contato.nascimento);
 		var contatoJson = JSON.stringify(Contato);
-		$.post('agenda.php', {
+		$.post('https://ifscagenda.000webhostapp.com/', {
 			acao : 'atualizar_contato',
 			contato : contatoJson
 		}, function() {
+			listarContatos();
 			$("#modal-editar").modal('hide');
 		}, "json");
-		listarContatos();
 	});
 	
 	$("#apagar").click(function() {
-		$.post('agenda.php', {
+		$.post('https://ifscagenda.000webhostapp.com/', {
 			acao : 'apagar_contato',
 			contato : contatoJson
 		}, function() {
 		}, "json");
-		$("#modal-editar").modal('hide');
 		listarContatos();
+		$("#modal-editar").modal('hide');
 	});
 }
 
 function listarContatos() {
 	$
 			.post(
-					'agenda.php',
+					'https://ifscagenda.000webhostapp.com/',
 					{
 						acao : 'listar_contato'
 					},
