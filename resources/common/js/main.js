@@ -82,7 +82,7 @@ function listarContatos() {
 		var dados = JSON.parse(dadosJson);
 		if (dados.length == 0) {
 			var alone = '<div class="text-muted text-center small" id="alone">';
-			alone += '<img src="images/alone.png" width="150" height="150" class="p-3 m-3"><br>';
+			alone += '<img src="resources/common/images/alone.png" width="150" height="150" class="p-3 m-3"><br>';
 			alone += 'Parece que você nao tem nenhum contato.<br>';
 			alone += 'Porque não tenta <a href="#" data-toggle="modal" data-target="#modal-novo">criar um novo</a>?';
 			alone += '</div>';
