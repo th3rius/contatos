@@ -56,16 +56,19 @@ function editarContato(elemento) {
 function listarcontatos() {
     contatos = JSON.parse(localStorage.getItem('contatos'));
     if (!contatos.length) {
+        $('#tabela').hide();
         $("#alone").show();
     } else {
+        var tabela;
         $.each(contatos, function (indice, contato) {
             tabela += '<tr id="editar-contato" cod="' + contatos.indexOf(contato) + '">';
             tabela += '<td>' + contato.nome + " " + contato.sobrenome + '</td>';
             tabela += '<td class="text-muted"><a class="mailto" href="mailto:' + contato.email + '">' + contato.email + '</a></td>';
-            tabela += '<td>' + contato.telefone + '</td>';
+            tabela += '<td>' + contato.telefone + '</td></tr>';
         });
         $("#alone").hide();
         $('#contatos').html(tabela);
+        $('#tabela').show();
         $("tr#editar-contato").click(function () {
             editarContato(this);
         });
