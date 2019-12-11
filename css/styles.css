@@ -14,3 +14,7 @@
 .mailto, .mailto:hover {
   color: gray;
 }
+
+#alone {
+  display: none;
+}
