@@ -1,5 +1,4 @@
-var contatos = [];
-
+var contatos;
 $(function () {
     listarcontatos();
     $("#carregando").hide();
@@ -55,10 +54,9 @@ function editarContato(elemento) {
 
 function listarcontatos() {
     contatos = JSON.parse(localStorage.getItem('contatos'));
-    if (!contatos.length) {
-        $('#tabela').hide();
-        $("#alone").show();
-    } else {
+    if(contatos == null)
+        contatos = [];
+    if (contatos.length) {
         var tabela;
         $.each(contatos, function (indice, contato) {
             tabela += '<tr id="editar-contato" cod="' + contatos.indexOf(contato) + '">';
@@ -72,5 +70,8 @@ function listarcontatos() {
         $("tr#editar-contato").click(function () {
             editarContato(this);
         });
+    } else {
+        $('#tabela').hide();
+        $("#alone").show();
     }
 }
