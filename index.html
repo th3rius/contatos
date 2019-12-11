@@ -24,8 +24,6 @@
 		</div>
 	</div>
 
-	<div id="contatos"></div>
-
 	<!-- Modal novo -->
 	<div class="modal fade" id="modal-novo" tabindex="-1" role="dialog">
 		<div class="modal-dialog">
@@ -130,6 +128,27 @@
 		data-target="#modal-novo">
 		Novo contato <i class="fas fa-plus"></i>
 	</button>
+
+	<div class="p-3" id="tabela">
+		<table class="table table-borderless table-hover table-responsive-sm">
+			<thead>
+				<tr>
+					<th scope="col"><i class="far fa-user-circle mr-2"></i>Nome</th>
+					<th scope="col"><i class="far fa-envelope mr-2"></i>Email</th>
+					<th scope="col"><i class="fas fa-mobile-alt mr-2"></i>Telefone</th>
+				</tr>
+			</thead>
+			<tbody>
+				<template></template>
+			</tbody>
+		</table>
+	</div>
+
+	<div class="text-muted text-center small" id="alone">
+		<img src="images/alone.png" width="150" height="150" class="p-3 m-3"><br>
+		Parece que você nao tem nenhum contato.<br>
+		Porque não tenta <a href="#" data-toggle="modal" data-target="#modal-novo">criar um novo</a>?
+	</div>
 
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 	<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
