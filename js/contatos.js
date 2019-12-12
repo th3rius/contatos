@@ -1,9 +1,16 @@
 var contatos;
+var contato;
 $(function () {
     listarcontatos();
     $("#carregando").hide();
     $("#form-novo").submit(function () {
         adicionarContato();
+    });
+    $("#form-editar").submit(function () {
+       editarContato() ;
+    });
+    $("#apagar").click(function () {
+       apagarContato(); 
     });
 });
 
@@ -21,8 +28,8 @@ function adicionarContato() {
     $("#modal-novo").modal('hide');
 }
 
-function editarContato(elemento) {
-    var contato = contatos[$(elemento).attr('cod')];
+function modalEditar(elemento) {
+    contato = contatos[$(elemento).attr('cod')];
     $("input#editar-nome").val(contato.nome);
     $("input#editar-sobrenome").val(contato.sobrenome);
     $("input#editar-email").val(contato.email);
@@ -30,26 +37,6 @@ function editarContato(elemento) {
     $("input#editar-nascimento").val(contato.nascimento);
     $("textarea#editar-endereco").val(contato.endereco);
     $("#modal-editar").modal('show');
-
-    $("#form-editar").submit(function () {
-        contato.nome = $('input#editar-nome').val();
-        contato.sobrenome = $('input#editar-sobrenome').val();
-        contato.email = $('input#editar-email').val();
-        contato.telefone = $('input#editar-telefone').val();
-        contato.nascimento = $('input#editar-nascimento').val();
-        contato.endereco = $('textarea#editar-endereco').val();
-        contatos[$(elemento).attr('cod')] = contato;
-        localStorage.setItem('contatos', JSON.stringify(contatos));
-        listarcontatos();
-        $("#modal-editar").modal('hide');
-    });
-
-    $("#apagar").click(function () {
-        contatos.splice($(elemento).attr('cod'), 1);
-        localStorage.setItem('contatos', JSON.stringify(contatos));
-        listarcontatos();
-        $("#modal-editar").modal('hide');
-    });
 }
 
 function listarcontatos() {
@@ -68,10 +55,30 @@ function listarcontatos() {
         $('#contatos').html(tabela);
         $('#tabela').show();
         $("tr#editar-contato").click(function () {
-            editarContato(this);
+            modalEditar(this);
         });
     } else {
         $('#tabela').hide();
         $("#alone").show();
     }
+}
+
+function editarContato() {
+    contato.nome = $('input#editar-nome').val();
+        contato.sobrenome = $('input#editar-sobrenome').val();
+        contato.email = $('input#editar-email').val();
+        contato.telefone = $('input#editar-telefone').val();
+        contato.nascimento = $('input#editar-nascimento').val();
+        contato.endereco = $('textarea#editar-endereco').val();
+        contatos[$(elemento).attr('cod')] = contato;
+        localStorage.setItem('contatos', JSON.stringify(contatos));
+        listarcontatos();
+        $("#modal-editar").modal('hide');
+}
+
+function apagarContato() {
+    contatos.splice($(elemento).attr('cod'), 1);
+        localStorage.setItem('contatos', JSON.stringify(contatos));
+        listarcontatos();
+        $("#modal-editar").modal('hide');
 }
