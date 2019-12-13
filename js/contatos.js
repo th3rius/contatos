@@ -76,7 +76,7 @@ function editarContato() {
         $("#modal-editar").modal('hide');
 }
 
-function apagarContato() {
+function apagarContato(elemento) {
     contatos.splice($(elemento).attr('cod'), 1);
         localStorage.setItem('contatos', JSON.stringify(contatos));
         listarcontatos();
